@@ -1,26 +1,28 @@
 const userAge = document.getElementById('userAge');
-const submit = document.getElementById('submitbutton');
 const answer = document.getElementById('answer');
-
+const submit1 = document.getElementById('submitButton');
 let age;
 
-function verify(age){
+submit1.onclick = function(){verify()}
+
+function verify(){
     age = userAge.value;
+    age = Number(age);
+    console.log(age)
     if(age == 0){
-        answer.textcontent = 'YOU CANT EVEN SEE AT UR AGE'
+        answer.textContent = 'YOU CANT EVEN SEE AT UR AGE';
     }
     else if(age < 0){
-        answer.textconten = 'YOUR NOT EVEN CONCIEVED'
+        answer.textContent = 'YOUR NOT EVEN CONCIEVED';
     }
     else if(age <= 5 & age > 0){
-        answer.textcontent = 'YOU ARE TOO YOUNG';
+        answer.textContent = 'YOU ARE TOO YOUNG';
     }
     else if(age >= 100){
-        answer.textcontent = 'YOU ARE TOO OLD';
+        answer.textContent = 'YOU ARE TOO OLD';
     }
     else{
-        answer.textcontent = 'YOU CAN UNDERSTAND THIS SENTENCE'
+        answer.textContent = 'YOU CAN UNDERSTAND THIS SENTENCE';
     }
 }
 
-submit.onclick = verify(userAge);
